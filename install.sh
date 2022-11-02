@@ -92,10 +92,11 @@ gns3
 # Required Packages
 sudo apt update
 sudo apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg \
-python3-pyqt5.qtwebsockets \
+python3-pyqt5.qtwebsockets telnet \
 qemu qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst \
 wireshark xtightvncviewer apt-transport-https \
-ca-certificates curl gnupg2 software-properties-common
+ca-certificates curl gnupg2 software-properties-common \
+qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
 # Install GNS3 from Pypi
 sudo pip3 install gns3-server
