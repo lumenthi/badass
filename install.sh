@@ -14,7 +14,8 @@ sudo apt upgrade
 
 # Dependencies
 sudo apt install qemu-block-extra
-sudo apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg python3-pyqt5.qtwebsockets qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst wireshark xtightvncviewer apt-transport-https ca-certificates curl gnupg2 software-properties-common
+sudo apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg python3-pyqt5.qtwebsockets qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst wireshark xtightvncviewer apt-transport-https ca-certificates curl gnupg2 software-properties-common \
+qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
 # GNS3
 sudo pip3 install gns3-server
@@ -75,8 +76,13 @@ EOF
 # Refresh metadata
 sudo apt update
 
+# virbr0 interface setup
+sudo virsh net-destroy default
+sudo virsh net-start default
+# To edit virbr0 config: sudo virsh net-edit default
+
 # ===============This is the end===============
-gns3
+# Don't forget to reboot then `gns3`
 
 
 # ===============================================
@@ -162,3 +168,11 @@ docker run --rm -it  --name test alpine:latest /bin/sh
 for i in ubridge docker wireshark; do
  sudo usermod -aG $i $USER
 done
+
+# virbr0 interface setup
+sudo virsh net-destroy default
+sudo virsh net-start default
+# To edit virbr0 config: sudo virsh net-edit default
+
+# ===============This is the end===============
+# Don't forget to reboot then `gns3`
