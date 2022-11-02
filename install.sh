@@ -15,7 +15,7 @@ sudo apt upgrade
 # Dependencies
 sudo apt install qemu-block-extra
 sudo apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg python3-pyqt5.qtwebsockets qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst wireshark xtightvncviewer apt-transport-https ca-certificates curl gnupg2 software-properties-common \
-qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils xterm telnet
 
 # GNS3
 sudo pip3 install gns3-server
