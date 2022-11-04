@@ -113,7 +113,7 @@ sudo pip3 install gns3-gui
 # $ ubridge version
 # uBridge version 0.9.19 running with libpcap version 1.10.0 (with TPACKET_V3)
 # iniparser: cannot open ubridge.ini
-sudo apt install git build-essential pcaputils  libpcap-dev cmake
+sudo apt install git build-essential pcaputils libpcap-dev
 git clone https://github.com/GNS3/ubridge.git
 cd ubridge
 make
@@ -126,7 +126,7 @@ rm -rf ubridge
 # $ which dynamips
 # /usr/local/bin/dynamips
 # $ dynamips --help
-# sudo apt install libelf-dev libpcap-dev cmake
+sudo apt install libelf-dev cmake
 git clone https://github.com/GNS3/dynamips.git
 cd dynamips
 mkdir build
