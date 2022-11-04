@@ -118,6 +118,8 @@ git clone https://github.com/GNS3/ubridge.git
 cd ubridge
 make
 sudo make install
+cd ../
+rm -rf ubridge
 
 # Dynamips
 # To check if installation suceeded
@@ -131,6 +133,8 @@ mkdir build
 cd build
 cmake ..
 sudo make install
+cd ../../
+rm -rf dynamips
 
 # ===============Docker installation===============
 
