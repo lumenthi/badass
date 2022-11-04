@@ -1,0 +1,64 @@
+# ==========DOCKER=============
+# To list active containers
+$ sudo docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS              PORTS     NAMES
+e98191fc9f1b   frrouting/frr:latest   "/gns3/init.sh /sbin…"   5 minutes ago   Up About a minute             xenodochial_austin
+
+# Connect into one
+$ sudo docker exec -it e98191fc9f1b bash
+
+# ==========VTYSH===========
+# To use the vtysh console (shell for FRR daemons)
+$ vtysh
+
+# List interfaces
+$ sh int
+
+# Enter configuration mode
+$ conf t
+# Note that you can edit the /etc/frr/vtysh.conf directly
+
+# Enable ospf service on all interfaces
+$ router ospf
+$ network 0.0.0.0/0 are 0
+
+# List interfaces running ospf
+$ do sh ip ospf int
+
+# Show route
+$ do sh ip route
+
+# Ping
+$ do ping X.X.X.X
+
+
+# ===========INTERFACES===========
+
+# ===========DAEMONS=============
+# Now swap change the content of /etc/frr/daemons by routers/daemons (Enabled bgpd, isisd, ospfd)
+
+# Reboot router
+
+# When running PS inside routers
+$ ps
+PID   USER     TIME  COMMAND
+    1 root      0:00 /sbin/tini -- /usr/lib/frr/docker-start
+   31 root      0:00 /gns3/bin/busybox script -qfc while true; do TERM=vt100 /gns3/bin/busybox sh; done /dev/null
+   37 root      0:00 /bin/ash -c while true; do TERM=vt100 /gns3/bin/busybox sh; done
+   38 root      0:00 /gns3/bin/busybox sh
+   49 root      0:00 {docker-start} /bin/ash /usr/lib/frr/docker-start
+   65 root      0:00 /usr/lib/frr/watchfrr zebra bgpd ospfd isisd staticd
+   88 frr       0:00 /usr/lib/frr/zebra -d -F traditional -A 127.0.0.1 -s 90000000
+   93 frr       0:00 /usr/lib/frr/bgpd -d -F traditional -A 127.0.0.1
+  100 frr       0:00 /usr/lib/frr/ospfd -d -F traditional -A 127.0.0.1
+  103 frr       0:00 /usr/lib/frr/isisd -d -F traditional -A 127.0.0.1
+  106 frr       0:00 /usr/lib/frr/staticd -d -F traditional -A 127.0.0.1
+  108 root      0:00 bash
+  116 root      0:00 ps
+
+# ==========OTHER===========
+# Choose a static IP for a device
+# 1st method:
+Right click -> Edit config then edit the address/mask of desired interface
+# 2nd method:
+Console into the machine then vi /etc/interfaces
