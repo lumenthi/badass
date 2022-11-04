@@ -31,6 +31,18 @@ $ do sh ip route
 # Ping
 $ do ping X.X.X.X
 
+# ===========IS-IS============
+$ router isis 1
+
+# For router 1
+$ net 49.0000.0000.0000.0001.00
+# For router 2
+$ net 49.0000.0000.0000.0002.00
+
+# The NSAP 47.0001.aaaa.bbbb.cccc.00 consists of:
+#  Area =  47.0001
+#  System ID =     aaaa.bbbb.cccc
+#  N-Selector =                   00
 
 # ===========INTERFACES===========
 
@@ -62,3 +74,26 @@ PID   USER     TIME  COMMAND
 Right click -> Edit config then edit the address/mask of desired interface
 # 2nd method:
 Console into the machine then vi /etc/interfaces
+
+# Sources
+# ISIS NET
+https://community.cisco.com/t5/routing/question-about-isis-nsap-addressing/td-p/4452789
+https://community.cisco.com/t5/routing/is-is-nsap-address/td-p/417266
+
+# GLOBAL
+https://www.uni-koeln.de/~pbogusze/posts/FRRouting_SR_Segment_Routing_tech_demo.html
+https://www.uni-koeln.de/~pbogusze/posts/FRRouting_basic_IS-IS_router_configuration.html
+
+# DEFINITION
+
+BGP = routing entre AS et AS = reseau routed by BGP
+
+Au sein d'un AS, le protocole de routage « interne » de type IGP (notamment OSPF ou IS-IS) permet aux routeurs de cet AS de communiquer entre eux, et plus particulièrement en vue de monter des sessions BGP internes (iBGP)2.
+Entre systèmes autonomes, le routage est « externe », en BGP externe (eBGP).
+
+# PROTOCOLES INTERNE
+OSPF
+ISI
+
+# PROTOCOLES EXTERNE
+BGP
