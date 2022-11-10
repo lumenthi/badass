@@ -7,6 +7,9 @@ e98191fc9f1b   frrouting/frr:latest   "/gns3/init.sh /sbin…"   5 minutes ago  
 # Connect into one
 $ sudo docker exec -it e98191fc9f1b bash
 
+# To build docker image from base
+$ sudo docker build -t router P1/router
+
 # ==========VTYSH===========
 # To use the vtysh console (shell for FRR daemons)
 $ vtysh
