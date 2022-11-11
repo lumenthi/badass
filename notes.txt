@@ -14,8 +14,17 @@ $ sudo docker build -t router P1/router
 # To use the vtysh console (shell for FRR daemons)
 $ vtysh
 
+# Process and load a configuration file manually; each line in the file is read and processed as if it were being typed
+$ copy [FILENAME] running-config
+
+# Execute commands from a file
+$ vtysh -f [FILENAME]
+
 # List interfaces
 $ sh int
+
+# information about interfaces
+$ show interface brief
 
 # Enter configuration mode
 $ conf t
@@ -41,6 +50,9 @@ $ router isis 1
 $ net 49.0000.0000.0000.0001.00
 # For router 2
 $ net 49.0000.0000.0000.0002.00
+
+# List isis interfaces
+$ do sh isis int
 
 # The NSAP 47.0001.aaaa.bbbb.cccc.00 consists of:
 #  Area =  47.0001

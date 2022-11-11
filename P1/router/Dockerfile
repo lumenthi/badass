@@ -1,3 +1,3 @@
 FROM frrouting/frr
 COPY daemons /etc/frr/daemons
-COPY vtysh.conf /etc/frr/vtysh.conf
+COPY frr.conf /etc/frr/frr.conf
