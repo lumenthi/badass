@@ -42,26 +42,8 @@
 | router_lumenthi-4 |   eth1      |  xx.xxx.xx.x/xx | host_lumenthi-3/eth0   |
 +-------------------+-------------+-----------------+------------------------+
 
-# ===Steps===
-# Hosts
-1. Configure hosts IP addresses
-
-# RR Router
-2. Configure interfaces (eth0, eth1, eth2, lo)
-3. Declare neighbors
-$ router bgp 1
-$ neighbor ibgp peer-group
-$ neighbor ibgp remote-as 1
-$ neighbor ibgp update-source lo
-$ bgp listen range 1.1.1.0/29 peer-group ibgp
-4. evpn, rr, ibgp activation
-$ address-family l2vpn evpn
-$ neighbor ibgp activate
-$ neighbor ibgp route-reflector-client
-$ exit-address-family
-5. Enable ospf
-network 0.0.0.0/0 area 0
-
-# Leafs
-6. Setup VxLAN, bridge like in P2
-7. Setup interfaces (eth0, loopback)
+# ==TODO==
+- Steps description
+- Complete IPs assignation in routers configs
+- Must take masks in considerations when assigning IPs, it must not overlap
+- Each leafs interfaces must be isolated with RR router and addresses must not overlap
