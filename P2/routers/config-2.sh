@@ -15,6 +15,6 @@ echo "VxLAN interface configuration done."
 # Bridge creation and setup
 ip link add br0 type bridge # Create bridge
 ip link set dev br0 up # Activate bridge
-brctl addif br0 eth1 # Add eth1 to bro0
+brctl addif br0 eth1 # Add eth1 to br0
 brctl addif br0 vxlan10 # Add vxlan10 to bridge
 echo "Bridge configuration done."
