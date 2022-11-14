@@ -4,13 +4,13 @@ hostname router_lumenthi-1
 no ipv6 forwarding
 !
 interface eth0
-  ip address 36.112.17.2/30
+  ip address 36.112.17.8/30
 !
 interface eth1
-  ip address 36.112.17.4/30
+  ip address 36.112.17.16/30
 !
 interface eth2
-  ip address 36.112.17.6/30
+  ip address 36.112.17.24/30
 !
 interface lo
   ip address 1.1.1.1/32

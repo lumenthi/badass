@@ -84,6 +84,9 @@ PID   USER     TIME  COMMAND
   116 root      0:00 ps
 
 # ==========OTHER===========
+# Show bridge summary
+$ brctl show br0
+
 # Show route for routers
 $ show ip route
 
