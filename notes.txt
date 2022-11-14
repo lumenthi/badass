@@ -84,6 +84,12 @@ PID   USER     TIME  COMMAND
   116 root      0:00 ps
 
 # ==========OTHER===========
+# Show route for routers
+$ show ip route
+
+# Show ospf neighbor
+$ show ip ospf neighbor
+
 # Choose a static IP for a device
 # 1st method:
 Right click -> Edit config then edit the address/mask of desired interface

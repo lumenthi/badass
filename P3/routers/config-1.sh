@@ -1,19 +1,19 @@
 vtysh
 conf t
-hostname <router_name>
+hostname router_lumenthi-1
 no ipv6 forwarding
 !
 interface eth0
-  ip address <eth0 router-1>/30
+  ip address 36.112.17.2/30
 !
 interface eth1
-  ip address <eth1 router-1>/30
+  ip address 36.112.17.4/30
 !
 interface eth2
-  ip address <eth2 router-1>/30
+  ip address 36.112.17.6/30
 !
 interface lo
-  ip address <lo router-1>/32
+  ip address 1.1.1.1/32
 !
 router bgp 1
   neighbor ibgp peer-group

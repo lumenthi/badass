@@ -7,15 +7,15 @@ brctl addif br0 eth1
 
 vtysh
 conf t
-hostname router_lumenthi-2
+hostname router_lumenthi-4
 no ipv6 forwarding
 !
 interface eth0
-  ip address 36.112.17.3/30
+  ip address 36.112.17.7/30
   ip ospf area 0
 !
 interface lo
-  ip address 1.1.1.2/32
+  ip address 1.1.1.4/32
   ip ospf area 0
 router bgp 1
   neighbor 1.1.1.1 remote-as 1
