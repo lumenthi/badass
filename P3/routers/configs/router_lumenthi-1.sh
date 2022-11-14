@@ -1,4 +1,4 @@
-vtysh
+vtysh << EOF
 conf t
 hostname router_lumenthi-1
 no ipv6 forwarding
@@ -30,3 +30,4 @@ router ospf
   network 0.0.0.0/0 area 0
 !
 line vty
+EOF

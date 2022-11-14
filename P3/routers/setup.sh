@@ -1,0 +1,1 @@
+sh configs/$HOSTNAME.sh

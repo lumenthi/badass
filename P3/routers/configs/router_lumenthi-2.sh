@@ -5,7 +5,7 @@ ip link set up dev vxlan10
 brctl addif br0 vxlan10
 brctl addif br0 eth1
 
-vtysh
+vtysh << EOF
 conf t
 hostname router_lumenthi-2
 no ipv6 forwarding
@@ -27,3 +27,4 @@ router bgp 1
   exit-address-family
 !
 router ospf
+EOF
