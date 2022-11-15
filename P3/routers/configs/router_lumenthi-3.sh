@@ -11,7 +11,7 @@ hostname router_lumenthi-3
 no ipv6 forwarding
 !
 interface eth0
-  ip address 36.112.17.17/30
+  ip address 36.112.17.6/30
   ip ospf area 0
 !
 interface lo

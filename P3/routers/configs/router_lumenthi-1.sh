@@ -4,13 +4,13 @@ hostname router_lumenthi-1
 no ipv6 forwarding
 !
 interface eth0
-  ip address 36.112.17.8/30
+  ip address 36.112.17.1/30
 !
 interface eth1
-  ip address 36.112.17.16/30
+  ip address 36.112.17.5/30
 !
 interface eth2
-  ip address 36.112.17.24/30
+  ip address 36.112.17.9/30
 !
 interface lo
   ip address 1.1.1.1/32
@@ -28,6 +28,4 @@ router bgp 1
 !
 router ospf
   network 0.0.0.0/0 area 0
-!
-line vty
 EOF
