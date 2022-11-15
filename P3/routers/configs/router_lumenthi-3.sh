@@ -7,9 +7,6 @@ brctl addif br0 eth1
 
 vtysh << EOF
 conf t
-hostname router_lumenthi-3
-no ipv6 forwarding
-!
 interface eth0
   ip address 36.112.17.6/30
   ip ospf area 0
@@ -17,14 +14,15 @@ interface eth0
 interface lo
   ip address 1.1.1.3/32
   ip ospf area 0
+!
 router bgp 1
   neighbor 1.1.1.1 remote-as 1
   neighbor 1.1.1.1 update-source lo
   !
   address-family l2vpn evpn
-   neighbor 1.1.1.1 activate
-   advertise-all-vni
-  exit-address-family
+    neighbor 1.1.1.1 activate
+    advertise-all-vni
+    exit-address-family
 !
 router ospf
 EOF

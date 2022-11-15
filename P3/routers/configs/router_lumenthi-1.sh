@@ -1,8 +1,5 @@
 vtysh << EOF
 conf t
-hostname router_lumenthi-1
-no ipv6 forwarding
-!
 interface eth0
   ip address 36.112.17.1/30
 !
@@ -24,7 +21,7 @@ router bgp 1
   address-family l2vpn evpn
     neighbor ibgp activate
     neighbor ibgp route-reflector-client
-  exit-address-family
+    exit-address-family
 !
 router ospf
   network 0.0.0.0/0 area 0
