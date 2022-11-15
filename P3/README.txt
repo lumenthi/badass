@@ -60,19 +60,19 @@ interface lo
   ip address <lo router_lumenthi-1>
 
 # BGP configuration
-router bgp 1
-  neighbor ibgp peer-group
-  neighbor ibgp remote-as 1
-  neighbor ibgp update-source lo
-  bgp listen range <lo range> peer-group ibgp # 1.1.1.0/29 = 1.1.1.1 - 1.1.1.6
+router bgp 1                                  # Configure BGP instance 1
+  neighbor ibgp peer-group                    # Create a BGP peer group
+  neighbor ibgp remote-as 1                   # Update the BGP neighbor table and assign AS n1 to ibgp group
+  neighbor ibgp update-source lo              # Specify the source address to reach the neighbor (1.1.1.1)
+  bgp listen range <lo range> peer-group ibgp # Choose an effective range for ibgp grp 1.1.1.0/29 = 1.1.1.1 - 1.1.1.6
 
-  address-family l2vpn evpn
-    neighbor ibgp activate
-    neighbor ibgp route-reflector-client
-    exit-address-family
+  address-family l2vpn evpn                   # Create the BGP EVPN address family and enter its view
+    neighbor ibgp activate                    # Activate BGP neighbors under the L2VPN address family
+    neighbor ibgp route-reflector-client      # Configures the router as a BGP route reflector for ibgp group
+    exit-address-family                       # Leave BGP EVPN view
 
-router ospf
-  network 0.0.0.0/0 area 0
+router ospf                                   # Access ospf configuration
+  network 0.0.0.0/0 area 0                    # Enable OSPF in every interface for that area
 
 # =LEAFS routers=
 
@@ -111,3 +111,6 @@ router ospf
 
 # ==TODO==
 - Steps description
+
+# ==SOURCES==
+https://www.arubanetworks.com/techdocs/AOS-CX/10.10/HTML/ip_route_6300-6400-83xx-9300-10000/Content/Chp_BGP/BGP_cmds/nei-rem-as-10.htm
