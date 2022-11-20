@@ -59,8 +59,6 @@ $ do sh isis int
 #  System ID =     aaaa.bbbb.cccc
 #  N-Selector =                   00
 
-# ===========INTERFACES===========
-
 # ===========DAEMONS=============
 # Now swap change the content of /etc/frr/daemons by routers/daemons (Enabled bgpd, isisd, ospfd)
 
@@ -93,12 +91,6 @@ $ show ip route
 # Show ospf neighbor
 $ show ip ospf neighbor
 
-# Choose a static IP for a device
-# 1st method:
-Right click -> Edit config then edit the address/mask of desired interface
-# 2nd method:
-Console into the machine then vi /etc/interfaces
-
 # Sources
 # ISIS NET
 https://community.cisco.com/t5/routing/question-about-isis-nsap-addressing/td-p/4452789
@@ -110,8 +102,6 @@ https://www.uni-koeln.de/~pbogusze/posts/FRRouting_basic_IS-IS_router_configurat
 
 # DEFINITION
 
-BGP = routing entre AS et AS = reseau routed by BGP
-
 Au sein d'un AS, le protocole de routage « interne » de type IGP (notamment OSPF ou IS-IS) permet aux routeurs de cet AS de communiquer entre eux, et plus particulièrement en vue de monter des sessions BGP internes (iBGP)2.
 Entre systèmes autonomes, le routage est « externe », en BGP externe (eBGP).
 
@@ -121,6 +111,3 @@ ISI
 
 # PROTOCOLES EXTERNE
 BGP
-
-# ==========TODO===========
-# ADD COMMENTS FOR ALL PARTS IN CONFIGS FILES
