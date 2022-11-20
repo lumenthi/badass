@@ -15,6 +15,8 @@ Discovering the bare-bones of a VxLAN network
 	- Busybox software suite
 
 ![p1 screen](docs/p1.png)
+
+![p1_2 screen](docs/p1_2.png)
 ## Part 2
 Set up a basic network model with multicast VxLAN enabled
 - First in `static unicast` then in `dynamic multicast`
